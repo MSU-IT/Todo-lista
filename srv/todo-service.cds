@@ -9,6 +9,8 @@ service TodoService {
         annotate TodoList with @odata.draft.enabled;
 
     entity TodoListStatus as projection on todo.TodoListStatus;
+
+    entity TodoListPriority as projection on todo.TodoListPriority;
     
 
     
@@ -59,6 +61,7 @@ service TodoService {
             ],
             FieldGroup #Details : {Data : [
                 {Value : status_ID},
+                {Value : priority_ID},
                 {Value : description, Label : '{i18n>TaskDesc}'},
                 {Value : duedate, Label : '{i18n>TaskDueDate}'},
             ]},
@@ -74,9 +77,10 @@ service TodoService {
 //	TodoList Elements
 //
 annotate TodoService.TodoList with {
-  ID     @title: '{i18n>TaskID}';
-  name   @title: '{i18n>TaskName}';
-  status @title: 'Status'  @Common: { Text: status.name, TextArrangement: #TextOnly };
+  ID       @title: '{i18n>TaskID}';
+  name     @title: '{i18n>TaskName}';
+  status   @title: 'Status'  @Common: { Text: status.name, TextArrangement: #TextOnly };
+  priority @title: 'Status'  @Common: { Text: priority.name, TextArrangement: #TextOnly };
   duedate  @title: '{i18n>TaskDueDate}';
   description  @UI.MultiLineText;
 }
@@ -84,4 +88,4 @@ annotate TodoService.TodoList with {
 
 
 // Workaround for Fiori popup for asking user to enter a new UUID on Create
-annotate TodoService.TodoList with { ID @Core.Computed; }
+annotate TodoService.TodoList with { ID @Core.Computed}

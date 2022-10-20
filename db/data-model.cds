@@ -14,10 +14,14 @@ entity TodoList  {
   name   : localized String;
   description : localized String;
   status : Association to TodoListStatus;
-  priority : Integer;
+  priority : Association to TodoListPriority;
   duedate : DateTime;
 }
 
+entity TodoListPriority : sap.common.CodeList {
+  key ID : Integer;
+  todolists  : Association to many TodoList on todolists.priority = $self;
+}
 
 entity TodoListStatus : sap.common.CodeList {
   key ID : Integer;

@@ -16,7 +16,9 @@ module.exports = class TodoService extends cdslib.ApplicationService { init(){
 async function genid (req) {
   const {ID} = await cds.tx(req).run (SELECT.one.from(req.target).columns('max(ID) as ID'))
   req.data.ID = ID  + 1
-  console.log(req.data.ID)
+  req.data.status_id = 1;
+  req.data.priority_id = 3;
+  console.log(req.data)
 }
 
 //module.exports = cds.server;

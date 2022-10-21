@@ -6,6 +6,8 @@ U formi aplikacije "Todo Lista" (Slika 2) korisnik može pregledavati i dodavati
 U formi aplikacije "Todo zadatak" (Slika 3) korisnik može detaljno opisati zadatak sa prioritetima, statusom i rokom do kojeg je potrebno izvršiti zadatak. 
 
 
+
+
 ## Prijava na todo listu (Slika 1)
 ![](./media/ToDo-Login%20page.drawio.svg)
 
@@ -38,8 +40,9 @@ File or Folder | Purpose
 
 - Instaliraj node.js
 - Instaliraj SAP Cloud Application Programming Model (CAP) `npm i -g @sap/cds-dk` 
-- Instalacija baze `cds deploy --to sqlite:my.db`
-- Pokrenuti `cds watch` 
+- U direktoriju u kojem se nalazi projekt pokrenuti instalacija sqlite baze `cds deploy --to sqlite:my.db`
+- u istom direktriju pokrenuti `cds watch` 
+- Nakon pokretanja u konzoli će se ispisati url adresa npr. [http://localhost:4004](http://localhost:4004) na kojoj će se pokrenuti testna aplikaciju koju je potrebno zamijeniti prema zahtjevu zadataka
 
 ## Default za nove zadatake
 - Status = New 

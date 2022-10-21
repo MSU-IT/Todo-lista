@@ -1,8 +1,12 @@
+
 using msan.todolist as todo from '../db/data-model';
 using { sap } from '@sap/cds/common';
 
+using from './user-service';
 
-service TodoService {
+service TodoService @(requires: 'authenticated-user') {
+
+
     entity Users as projection on todo.Users;
         annotate Users with @odata.draft.enabled;
     entity TodoList as projection on todo.TodoList;
@@ -89,3 +93,6 @@ annotate TodoService.TodoList with {
 
 // Workaround for Fiori popup for asking user to enter a new UUID on Create
 annotate TodoService.TodoList with { ID @Core.Computed}
+
+
+

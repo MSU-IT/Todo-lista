@@ -15,6 +15,7 @@ entity TodoList  {
   description : localized String;
   status : Association to TodoListStatus;
   priority : Association to TodoListPriority;
+  username : Association to Users;
   duedate : DateTime;
 }
 

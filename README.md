@@ -1,29 +1,59 @@
-# Getting Started
+#  Zadatak : todo lista
 
-Welcome to your new project.
+Potrebno je kreirati web aplikaciju za logiranje zadataka korisnika. Ukoliko se koristi OpenUI5 ili SapUI5 framework nije potrebno raditi autentifikaciju.
+U slučaju korištenja negog drugog frameworka potrebno je napraviti stranicu za prijavu. \
+U formi aplikacije "Todo Lista" (Slika 2) korisnik može pregledavati i dodavati zadatke. \
+U formi aplikacije "Todo zadatak" (Slika 3) korisnik može detaljno opisati zadatak sa prioritetima, statusom i rokom do kojeg je potrebno izvršiti zadatak. 
 
-It contains these folders and files, following our recommended project layout:
+
+## Prijava na todo listu (Slika 1)
+![](./media/ToDo-Login%20page.drawio.svg)
+
+## Todo lista (Slika 2)
+![](./media/TodoList-ToDoList%20page.drawio.svg)
+
+# Todo zadatak - detaljni prikaz
+![](./media/TodoList-Task%20page.drawio.svg)
+
+
+## Datamodel
+![](./media/TodoList-ToDoList%20datamodel.drawio.svg)
+
+
+## Organizacija projekta
+
+
+Project sadrži sljedeće direktorije, ovo je preporučena struktura:
 
 File or Folder | Purpose
 ---------|----------
 `app/` | content for UI frontends goes here
-`db/` | your domain models and data go here
-`srv/` | your service models and code go here
+`db/` | domain models and data go here
+`srv/` | service models and code go here
 `package.json` | project metadata and configuration
-`readme.md` | this getting started guide
+`readme.md` | this guide
 
 
-## Next Steps
+## Koraci za instalaciju
 
-- Open a new terminal and run `cds watch` 
-- (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
-- Start adding content, for example, a [db/schema.cds](db/schema.cds).
+- Instaliraj node.js
+- Instaliraj SAP Cloud Application Programming Model (CAP) `npm i -g @sap/cds-dk` 
+- Instalacija baze `cds deploy --to sqlite:my.db`
+- Pokrenuti `cds watch` 
 
+## Default za nove zadatake
+- Status = New 
+- Priority = Normal 
 
-## Learn More
+## Polje za pretraživanje
+Pretraživanje se izvršava po svim tekstualnim poljima
 
-Learn more at https://cap.cloud.sap/docs/get-started/.
+## Vrijednosti za polja status i prioritet
+- Status = tablica TodoListStatus
+- Prioritet = tablica TodoListPriority
 
-## Default on new todo item
-Status = New
-Priority = Normal
+## Instalacija baze
+- cds deploy --to sqlite:my.db
+
+## Dokumentacija 
+- [SAP Cloud Application Programming Model (CAP)](https://cap.cloud.sap/docs/get-started/)

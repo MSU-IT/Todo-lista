@@ -1,12 +1,7 @@
-const cds = require("@sap/cds");
-const cdslib = require('@sap/cds/lib')
-//const cov2ap = require("@sap/cds-odata-v2-adapter-proxy");
+const cds = require('@sap/cds/lib')
 
-//cds.on("bootstrap", (app) => app.use(cov2ap()));
+module.exports = class TodoService extends cds.ApplicationService { init(){
 
-//
-
-module.exports = class TodoService extends cdslib.ApplicationService { init(){
   this.before ('NEW','Users', genid)
   this.before ('NEW','TodoList', genid)
   return super.init()
@@ -18,7 +13,5 @@ async function genid (req) {
   req.data.ID = ID  + 1
   req.data.status_id = 1;
   req.data.priority_id = 3;
-  console.log(req.data)
 }
 
-//module.exports = cds.server;
